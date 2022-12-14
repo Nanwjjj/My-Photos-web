@@ -28,11 +28,11 @@ const AddPhoto = () => {
 
   return (
     <>
-      <Box className="container">
+      <div className="container">
         {error && (
-          <Box className="error-msg" color="white">
+          <div className="error-msg" color="white">
             {error}
-          </Box>
+          </div>
         )}
         <form className="add-form" onSubmit={addPhoto}>
           <label>
@@ -49,7 +49,7 @@ const AddPhoto = () => {
           </label>
           <input className="submit-btn" type="submit" value="Submit" data-testid="submit" />
         </form>
-      </Box>
+      </div>
     </>
   );
 };

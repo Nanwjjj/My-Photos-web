@@ -1,4 +1,3 @@
-import { Box, Heading } from "@chakra-ui/react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -42,16 +41,16 @@ const EditPhoto = () => {
     loadData();
   }, [id]);
 
-  if (error) return <Box>Error!</Box>;
+  if (error) return <div>Error!</div>;
 
   return (
     <>
       {loading ? (
-        <Heading as="h1" style={{ width: "100%", textAlign: "center", marginTop: "20px" }}>
+        < h1 style={{ width: "100%", textAlign: "center", marginTop: "20px" }}>
           Loading...
-        </Heading>
+        </h1>
       ) : (
-        <Box className="container">
+        <div className="container">
           <form className="edit-form" onSubmit={editPhoto}>
             <label>
               Image Url:
@@ -63,7 +62,7 @@ const EditPhoto = () => {
             </label>
             <input className="submit-btn" type="submit" value="Submit" data-testid="submit" />
           </form>
-        </Box>
+        </div>
       )}
     </>
   );
