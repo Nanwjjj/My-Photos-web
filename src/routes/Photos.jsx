@@ -11,7 +11,7 @@ const Photos = () => {
   const [error, setError] = useState(null);
 
   const deletePhoto = async (id) => {
-    await fetch(`http://localhost:3001/photos/${id}`, {
+    await fetch(`https://gallery-app-server.vercel.app/photos/${id}`, {
       method: "DELETE",
     });
     setPhotos(photos.filter((x) => x.id !== id));
@@ -24,7 +24,7 @@ const Photos = () => {
       try {
         const queryParams = { _sort: "id", _order: `${sort}`, q: `${submited}` };
         const searchParams = new URLSearchParams(queryParams);
-        const response = await fetch(`http://localhost:3001/photos?${searchParams}`);
+        const response = await fetch(`https://gallery-app-server.vercel.app/photos?${searchParams}`);
         const responseJson = await response.json();
         setPhotos(responseJson);
         setLoading(false);
@@ -41,7 +41,7 @@ const Photos = () => {
     setLoading(true);
     const loadData = async () => {
       try {
-        const response = await fetch("http://localhost:3001/photos");
+        const response = await fetch("https://gallery-app-server.vercel.app/photos");
         const responseJson = await response.json();
         setPhotos(responseJson);
         setLoading(false);
