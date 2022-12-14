@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box } from "@chakra-ui/react";
+// import { Box } from "@chakra-ui/react";
 
 const AddPhoto = () => {
   const [imageUrl, setImageUrl] = useState("");
